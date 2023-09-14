@@ -1,16 +1,14 @@
 package leetcode
 
-import "fmt"
-
 func removeDuplicates2(nums []int) int {
-	end := len(nums) - 1
-	endElement := nums[end]
+
 	count := 0
-	index := 2
-	altIndex := 0
-	j := 0
-	i := 2
-	for j != end {
+	index := 0
+	i := 1
+	if len(nums) == 2 {
+		return len(nums)
+	}
+	for {
 		if nums[i] == nums[i-1] && count < 1 {
 			count += 1
 			i++
@@ -19,16 +17,33 @@ func removeDuplicates2(nums []int) int {
 			count += 1
 			i++
 		} else if nums[i] == nums[i-1] && count > 2 {
-			altIndex = i
 			i += 1
 		} else if nums[i] != nums[i-1] {
-			nums = append(nums[:index], nums[i:]...)
-			i += 1
-			j = i
-			count = 0
-			fmt.Println(nums)
+			if count == 1 {
+				nums = append(nums[:i], nums[i:]...)
+				if index < len(nums)-1 {
+					return int(len(nums))
+				}
+				count = 0
+				i += 1
+				continue
+			}
+			if count == 2 {
+				nums = append(nums[:index], nums[i:]...)
+				if index < len(nums)-1 {
+					return int(len(nums))
+				}
+				count = 0
+				continue
+			}
+			if count > 2 {
+				nums = append(nums[:index], nums[i:]...)
+				if index < len(nums)-1 {
+					return int(len(nums))
+				}
+				i = index + 1
+				count = 0
+			}
 		}
 	}
-
-	return int(len(nums))
 }
