@@ -1,9 +1,9 @@
 /*
 	This is a standard solution to missing number problem where a number is missing and we need to find it
 
-but the catch here is that it has to be a O(1) solution below A.P method does the work
+but the catch here is that it has to be a O(1) solution below A.P method does the work*/
 
-package Leetcode
+package leetcode
 
 import (
 	"fmt"
@@ -27,4 +27,4 @@ func Missing() {
 		_, _ = fmt.Scan(&ls[i]) // Read the value directly into the slice element
 	}
 	MissingNumber(ls, x)
-}*/
+}
