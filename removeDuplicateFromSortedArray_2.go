@@ -21,6 +21,7 @@ func removeDuplicates2(nums []int) int {
 		} else if nums[i] == nums[i-1] && count > 2 {
 			altIndex = i
 		} else if nums[i] != nums[i-1] {
+			if nums[i] 
 			nums = append(nums[:index], nums[i:]...)
 			j = i
 			count = 0
