@@ -1,3 +1,5 @@
+/* This problem is solved by the Boyer Moore's Majority vote algorithm*/
+
 package leetcode
 
 func majorityElement(nums []int) int {
