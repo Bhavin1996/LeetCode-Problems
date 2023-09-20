@@ -12,7 +12,7 @@ func max(arr []int) (b int) {
 	a := arr[0]
 	b = 0
 	count := a
-	for i := 1; i < len(arr)-1; i++ {
+	for i := 1; i < len(arr); i++ {
 		if arr[i] >= a {
 			a = arr[i]
 			b = i
@@ -27,7 +27,7 @@ func max(arr []int) (b int) {
 		}
 
 	}
-	return b
+	return b + 1
 }
 
 func canJump(nums []int) bool {
@@ -62,3 +62,23 @@ func main() {
 		fmt.Println("False")
 	}
 }
+
+/* optimal solution
+
+func canJump(nums []int) bool {
+    // the best I can reach
+    farthest := 0
+    n := len(nums)
+
+    for i := 0; i < n; i++ {
+        if i + nums[i] > farthest {
+            farthest = i + nums[i]
+        }
+
+        if nums[i] == 0 && i < n - 1 && i == farthest {
+            return false
+        }
+    }
+
+    return true
+}*/
