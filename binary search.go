@@ -19,7 +19,7 @@ func binarySearch(start int, end int, arr []int) int {
 	return -1
 }
 
-func main() {
+func main1() {
 	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	res := binarySearch(0, len(arr)-1, arr[:])
 	fmt.Println("The varaible was found in array at index :", res)
