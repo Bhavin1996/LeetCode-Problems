@@ -62,6 +62,7 @@ func RemoveDuplicates(nums []int) int {
 }
 
 /*
+alternate solution
 
 func removeDuplicates(nums []int) int {
 	lasti := 0

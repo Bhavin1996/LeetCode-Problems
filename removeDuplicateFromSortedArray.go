@@ -17,6 +17,10 @@ assert k == expectedNums.length;
 for (int i = 0; i < k; i++) {
     assert nums[i] == expectedNums[i];
 }
+
+To solve this problem what we can do is iterate over the array and while looping we put a check for duplicate condition
+now as soon as we have found the non-duplicate of that element, we replcae it with the index equal to value of count and return a
+slice until the count valued index.
 */
 
 package leetcode

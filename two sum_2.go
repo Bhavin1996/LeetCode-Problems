@@ -1,3 +1,13 @@
+/* This problem is solved by the two pointer approach in which, which is as follows that we assign the one pointer to the first index of array
+and second pointer to the last element.
+# Keep note that this only works on the sorted elements
+# Now after assigning we do addition of both elements based on two pointers we have initialised
+# If the sum is smaller than target increase the first element
+# and if not then decrease the second pointer.
+# Do this until u get target value and return the index of elements at that point
+
+*/
+
 package leetcode
 
 import "sort"

@@ -1,4 +1,6 @@
-/* This problem is solved by the Boyer Moore's Majority vote algorithm*/
+/* This problem is solved by the Boyer Moore's Majority vote algorithm
+reference link : https://youtu.be/X0G5jEcvroo?si=kLfICzd8tAZr0TlX
+*/
 
 package leetcode
 

@@ -1,3 +1,4 @@
+/* simple inplementation of slicing based on index depending on the requirement*/
 package leetcode
 
 func rotate(nums []int, k int) {
@@ -7,7 +8,7 @@ func rotate(nums []int, k int) {
 }
 
 /*
-
+alternate solution
 func rotate(nums []int, k int) {
     n := len(nums)
     k %= n
