@@ -4,7 +4,7 @@ Return true if you can reach the last index, or false otherwise.
 [4,2,0,0,1,1,4,4,4,0,4,0]
 */
 
-package main
+package leetcode
 
 import "fmt"
 
