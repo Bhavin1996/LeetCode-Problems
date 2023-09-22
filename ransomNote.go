@@ -28,11 +28,7 @@ Output: true
 # If not just return true after done with loop.
 */
 
-package main
-
-import (
-	"fmt"
-)
+package leetcode
 
 /*func canConstruct(ransomNote string, magazine string) bool {
 	ransomMap := make(map[rune]int)
@@ -65,10 +61,4 @@ func canConstruct(ransomNote string, magazine string) bool {
 		}
 	}
 	return true
-}
-
-func main() {
-	fmt.Println("Hello, 世界")
-	res := canConstruct()
-	fmt.Println(res)
 }
