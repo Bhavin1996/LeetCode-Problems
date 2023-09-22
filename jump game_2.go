@@ -29,4 +29,5 @@ func jump(nums []int) int {
 			}
 		}
 	}
+	return numberOfJumps
 }
