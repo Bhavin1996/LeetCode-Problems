@@ -51,3 +51,50 @@ func getSum(n int) int {
 
 	return sum
 }
+
+/*
+
+// nextNumber transforms a given number `n` to a new number by summing the squares of its individual digits
+// time commplexity is O(d), where d is the number of digits in n. Or O(log(n)) because d <= log(n) + 1
+func nextNumber(n int) int {
+    sum := 0
+    for n > 0 {
+        digit := n % 10;
+        sum += digit * digit;
+        n = n / 10;
+    }
+    return sum
+}
+
+
+func isHappy(n int) bool {
+
+    // bitmap stores information on which number (< 100) has been already visited.
+    // 1 number uint64 can stores 64 bits, so to store 100 bits, we need an array of two number
+    bitmap := []uint64{0, 0}
+
+    for n != 1 {
+        if n < 64 {
+            // if n < 64, its bit information is stored on the first number in the array, thus bitmap[0]
+            if bitmap[0] & (1 << n) > 0 {
+                // if the bit at location n is already set, which mean the location n has been visited previosly => there is a loop => return false.
+                return false
+            }
+            //first time visited, set the bit to 1
+            bitmap[0] = bitmap[0] | (1 << n)
+        } else if n < 100 {
+
+            // same logic as the above if statement, but the information is stored in the second number.
+
+            if bitmap[1] & (1 << (n % 64)) > 0 {
+                return false
+            }
+            bitmap[0] = bitmap[0] | (1 << (n % 64))
+        }
+        n = nextNumber(n)
+
+    }
+
+    return true
+
+}*/
