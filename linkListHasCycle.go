@@ -1,4 +1,4 @@
-/* # Floyd's Cycle-Finding Algorithm, 
+/* # Floyd's Cycle-Finding Algorithm,
 also known as the "tortoise and hare" algorithm, is used to detect cycles or loops in a sequence,
 such as a linked list or an array.
 The algorithm is named after Robert W. Floyd, who is credited with its discovery.
@@ -33,13 +33,13 @@ import (
 )
 
 // Definition for singly-linked list.
-type ListNode struct {
+type listNode struct {
 	Val  int
-	Next *ListNode
+	Next *listNode
 }
 
 // Function to detect a cycle in a linked list.
-func hasCycle(head *ListNode) bool {
+func hasCycle(head *listNode) bool {
 	// Initialize two pointers, slow and fast.
 	slow := head
 	fast := head
@@ -59,12 +59,12 @@ func hasCycle(head *ListNode) bool {
 	return false
 }
 
-func main() {
+func main1() {
 	// Create a linked list with a cycle (for testing).
-	head := &ListNode{Val: 3}
-	node1 := &ListNode{Val: 2}
-	node2 := &ListNode{Val: 0}
-	node3 := &ListNode{Val: -4}
+	head := &listNode{Val: 3}
+	node1 := &listNode{Val: 2}
+	node2 := &listNode{Val: 0}
+	node3 := &listNode{Val: -4}
 	head.Next = node1
 	node1.Next = node2
 	node2.Next = node3

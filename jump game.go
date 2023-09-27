@@ -54,7 +54,7 @@ func canJump(nums []int) bool {
 	return true
 }
 
-func main1() {
+func main2() {
 	arr := []int{4, 2, 0, 0, 1, 1, 4, 4, 4, 0, 4, 0}
 	if canJump(arr[:]) {
 		fmt.Println("True")

@@ -1,29 +1,29 @@
 package leetcode
 
-import "fmt"
-
 type ListNode struct {
 	Val  int
 	Next *ListNode
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	var head *ListNode
-	head = l1
-	prev := head
-	sum := 0
-	for l1 != nil && l2 != nil {
-
-		sum = l1.Val + l2.Val
-		fmt.Println(sum)
-		fmt.Println(prev.Val)
-		l1.Val = sum % 10
-		prev.Val += sum / 10
-		fmt.Println(prev.Val)
-		prev = l1
-		l1 = l1.Next
-		l2 = l2.Next
-		fmt.Println(l1, l2)
+	result := &ListNode{}
+	tmp := result
+	for l1 != nil || l2 != nil {
+		if l1 != nil {
+			tmp.Val += l1.Val
+			l1 = l1.Next
+		}
+		if l2 != nil {
+			tmp.Val += l2.Val
+			l2 = l2.Next
+		}
+		if tmp.Val > 9 {
+			tmp.Val -= 10
+			tmp.Next = &ListNode{Val: 1}
+		} else if l1 != nil || l2 != nil {
+			tmp.Next = &ListNode{}
+		}
+		tmp = tmp.Next
 	}
-	return head
+	return result
 }
