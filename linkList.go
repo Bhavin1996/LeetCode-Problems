@@ -18,6 +18,14 @@ func (n node) String() string {
 	return fmt.Sprintf("%d", n.value)
 }
 
+func (l linkList) String() string {
+	sb := strings.Builder{}
+	for iterator := l.head; iterator != nil; iterator = iterator.next {
+		sb.WriteString(fmt.Sprintf("%s ", iterator))
+	}
+	return sb.String()
+}
+
 func (l *linkList) add(value int) {
 	newNode := new(node)
 	newNode.value = value
@@ -99,12 +107,3 @@ func (l *linkList) reverse() {
 	}
 	l.head = prev
 }
-
-func (l linkList) String() string {
-	sb := strings.Builder{}
-	for iterator := l.head; iterator != nil; iterator = iterator.next {
-		sb.WriteString(fmt.Sprintf("%s ", iterator))
-	}
-	return sb.String()
-}
-
