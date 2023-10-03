@@ -2,6 +2,7 @@ package leetcode
 
 import "fmt"
 
+// Function to find if the kth bit is zero or one
 func findIthBit(num int, k int) int {
 	mask := 1 << k
 	if num&mask > 0 {
