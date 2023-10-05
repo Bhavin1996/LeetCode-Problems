@@ -8,7 +8,7 @@ package leetcode
 
 import "fmt"
 
-func max(arr []int) (b int) {
+func max1(arr []int) (b int) {
 	a := arr[0]
 	b = 0
 	count := a
@@ -46,7 +46,7 @@ func canJump(nums []int) bool {
 		if jumpDist >= len(nums)-1 {
 			return true
 		} else {
-			index := max(nums[i+1 : jumpDist+1])
+			index := max1(nums[i+1 : jumpDist+1])
 			i += index
 			fmt.Println(i)
 		}
