@@ -55,7 +55,7 @@ func convert(s string, numRows int) string {
 	return result
 }
 
-func main() {
+func main_alt() {
 	s := "PAYPALISHIRING"
 	numRows := 3
 	converted := convert(s, numRows)

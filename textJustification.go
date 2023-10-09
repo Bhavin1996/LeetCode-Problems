@@ -1,36 +1,38 @@
 package leetcode
 
-import "strings"
-
-func addSpaces(inputString string, n int) string {
-	result := inputString + strings.Repeat(" ", n)
-	return result
-}
+import (
+	"fmt"
+	"strings"
+)
 
 func fullJustify(words []string, maxWidth int) []string {
-	var res []string
 	var cur []string
+	curLength := 0
 	num_of_letters := 0
 	index := 0
 
 	for _, word := range words {
 		cur = append(cur, word)
+		curLength += len(word)
 		num_of_letters++
-		if len(cur) > maxWidth {
+		if curLength+num_of_letters > maxWidth {
 			num_of_letters--
-			l := len(cur)
-			spaces := (len(cur) - len(cur[l-1]) - 1 - num_of_letters) / 2
+			spaces := (curLength - len(word)) / 2
 			for i := 0; i < len(cur)-2; i++ {
-				res[index] += addSpaces(words[i], spaces)
+				cur[i] = cur[i] + strings.Repeat(" ", spaces)
+				fmt.Println(cur)
 			}
 			index++
-			res[index] = word
-			cur = nil
-			cur = append(cur, word)
+			//cur = nil
 			num_of_letters = 0
 		}
 
 	}
+	return cur
+}
 
-	return res
+func main() {
+	words := []string{"This", "is", "an", "example", "of", "text", "justification."}
+	res := fullJustify(words, 16)
+	fmt.Println(res)
 }
