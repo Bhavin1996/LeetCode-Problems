@@ -9,7 +9,7 @@ func bestTimeToBuyAndSell_1(prices []int) int {
 	buyPrice := prices[0]
 	maxProfit := 0
 	for _, val := range prices {
-		if val < buyPrice {
+		if val < buyPrice { // This makes sure that we always have buyPrice at min val
 			buyPrice = val
 		}
 		res := val - buyPrice
