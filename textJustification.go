@@ -31,7 +31,7 @@ func fullJustify(words []string, maxWidth int) []string {
 	return cur
 }
 
-func main() {
+func mai() {
 	words := []string{"This", "is", "an", "example", "of", "text", "justification."}
 	res := fullJustify(words, 16)
 	fmt.Println(res)
