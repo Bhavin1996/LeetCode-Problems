@@ -49,11 +49,42 @@ func (l linkList) get(value int) *node {
 	return nil
 }
 
+func (l *linkList) remove(value int) {
+	var prev *node
+	for iterator := l.head; iterator != nil; iterator = iterator.next {
+		if iterator.val == value {
+			if l.head == iterator {
+				l.head = iterator.next
+				return
+			} else {
+				prev.next = iterator.next
+				iterator.next = nil
+				return
+			}
+		}
+		prev = iterator
+	}
+}
+
+func (l *linkList) reverse() {
+	var next, prev *node
+	curr := l.head
+	for curr != nil {
+		next = curr.next
+		curr.next = prev
+		prev = curr
+		curr = next
+	}
+	l.head = prev
+}
 func main() {
 	ll := linkList{}
 	ll.add(1)
 	ll.add(2)
 	ll.add(3)
+	ll.add(4)
 	fmt.Println(ll)
 	fmt.Println(ll.get(2))
+	ll.remove(2)
+	fmt.Println(ll)
 }
