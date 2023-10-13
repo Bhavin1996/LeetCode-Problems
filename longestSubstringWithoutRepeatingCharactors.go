@@ -1,7 +1,7 @@
 package leetcode
 
 func lengthOfLongestSubstring(s string) int {
-	lookup := make(map[rune]int)
+	lookup := make(map[rune]int, 26)
 	count, maxCount := 0, 0
 	for _, ch := range s {
 		count++
