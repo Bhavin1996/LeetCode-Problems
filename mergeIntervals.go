@@ -1,16 +1,45 @@
 package leetcode
 
-func merge(intervals [][]int) [][]int {
-	res := [][]int{}
-	start := intervals[0][0]
-	end := 0
-	for i := 0; i < len(intervals)-1; i++ {
-		if intervals[i][1] >= intervals[i+1][0] {
-			end = intervals[i+1][1]
-		} else {
-			res = append(res, []int{intervals[i+1][1]})
-			start = intervals[i+1][0]
-		}
+import "sort"
+
+func maxEle(x, y int) int {
+
+	if x >= y {
+		return x
+	} else {
+		return y
 	}
-	return res
+
+}
+
+//---------------------
+
+func merge(intervals [][]int) [][]int {
+
+	// predefined constant for start (left endpoint), as well as end (right endpoint)
+	const START, END = 0, 1
+
+	result := make([][]int, 0)
+
+	sort.Slice(intervals, func(a, b int) bool {
+		return (intervals[a][0] < intervals[b][0]) || ((intervals[a][0] == intervals[b][0]) && (intervals[a][1] < intervals[b][1]))
+	})
+
+	for _, curInterval := range intervals {
+
+		if (len(result) == 0) || (result[len(result)-1][END] < curInterval[START]) {
+
+			// no overlapping
+			result = append(result, curInterval)
+
+		} else {
+
+			// has overlapping
+			// merge with previous interval
+			result[len(result)-1][END] = maxEle(result[len(result)-1][END], curInterval[END])
+		}
+
+	}
+
+	return result
 }
