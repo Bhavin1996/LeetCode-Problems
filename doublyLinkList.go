@@ -15,4 +15,7 @@ func (dd *doublyLinkList) addNode(val int) {
 	newNode := new(Node)
 	newNode.prev = dd.Tail
 	newNode.value = val
+	if dd.Tail != nil {
+		dd.Tail.next = newNode
+	}
 }
