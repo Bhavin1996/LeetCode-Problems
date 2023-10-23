@@ -16,6 +16,25 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+username := ""
+
+password := "sudhanshubawane"
+
+cluster := "<clusterName>"
+
+authSource  := "<authSource>"
+
+authMechanism := "<authMechanism>"
+
+uri := "mongodb+srv://" + url.QueryEscape(username) + ":" + 
+
+		url.QueryEscape(password) + "@" + cluster + 
+
+		"/?authSource=" + authSource +
+
+		"&authMechanism=" + authMechanism
+
+
 // Your MongoDB Atlas Connection String
 const uri = "mongodb+srv://sudhanshubawane:Crossbone@100st@cluster0.nlgg6dn.mongodb.net/?retryWrites=true&w=majority"
 
