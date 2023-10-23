@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 import "fmt"
 
@@ -26,7 +26,7 @@ func findElectionWinner(votes [][]string) string {
 	return winner
 }
 
-func main_voter() {
+func main() {
 	votes := [][]string{
 		{"Raj", "Amit", "Kriti"},
 		{"Raj", "Vinod", "Sam"},
