@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 func findElectionWinner(votes [][]string) string {
 	score := make(map[string]int)
@@ -26,13 +24,13 @@ func findElectionWinner(votes [][]string) string {
 	return winner
 }
 
-func main() {
-	votes := [][]string{
-		{"Raj", "Amit", "Kriti"},
-		{"Raj", "Vinod", "Sam"},
-		{"Amit", "Raj", "Kriti"},
-	}
+// func main() {
+// 	votes := [][]string{
+// 		{"Raj", "Amit", "Kriti"},
+// 		{"Raj", "Vinod", "Sam"},
+// 		{"Amit", "Raj", "Kriti"},
+// 	}
 
-	winner := findElectionWinner(votes)
-	fmt.Printf("The winner is: %s\n", winner)
-}
+// 	winner := findElectionWinner(votes)
+// 	fmt.Printf("The winner is: %s\n", winner)
+// }
