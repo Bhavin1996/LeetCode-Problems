@@ -77,7 +77,7 @@ func (l *linkList) reverse() {
 	}
 	l.head = prev
 }
-func main() {
+func main_LL() {
 	ll := linkList{}
 	ll.add(1)
 	ll.add(2)

@@ -1,6 +1,6 @@
 // Q6oUxOWcubB8fnyg
 
-package main
+package leetcode
 
 import (
 	// Add required Go packages
@@ -16,15 +16,15 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-username := ""
+username := "sudhanshubawane"
 
-password := "sudhanshubawane"
+password := "Crossbone@100st"
 
-cluster := "<clusterName>"
+cluster := "cluster0"
 
-authSource  := "<authSource>"
+authSource  := "nlgg6dn"
 
-authMechanism := "<authMechanism>"
+authMechanism := "mongodb.net/?retryWrites=true&w=majority"
 
 uri := "mongodb+srv://" + url.QueryEscape(username) + ":" + 
 
@@ -82,7 +82,7 @@ func getMovies(c *gin.Context) {
 	c.JSON(http.StatusOK, movies)
 }
 
-func main() {
+func main()_mongo {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
