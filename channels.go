@@ -56,5 +56,4 @@ func main_chan() {
 			}
 		}
 	}
-}	var mu sync.Mutex
-
+}
