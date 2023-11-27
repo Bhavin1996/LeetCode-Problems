@@ -27,5 +27,5 @@ func (this *RandomizedSet) Remove(val int) bool {
 }
 
 func (this *RandomizedSet) GetRandom() int {
-
+	return 1
 }
